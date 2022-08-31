@@ -5,14 +5,19 @@ $(document).ready(function(){
 
         let cep = $('#CEP').val()
 
-        let url = `viacep.com.br/ws/${cep}/json/`
+        let url = `https://viacep.com.br/ws/${cep}/json/`
 
         $.ajax({
             type: 'GET',
-            dataType: 'json',
+            dataType: 'JSON',
+            url: url,
+            success: function(dados){
+                $('#LOGRADOURO').val(dados.logradouro)
+                $('#BAIRRO').val(dados.bairro)
+                $('#LOCALIDADE').val(dados.localidade)
+                $('#UF').val(dados.uf)
+            }
         })
-
-        console.log(url)
     })
 
 })
