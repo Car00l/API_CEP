@@ -1,6 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-    $('.btn').click(function(e){
+    $('.btn').click(function(e) {
         e.preventDefault()
 
         let cep = $('#CEP').val()
@@ -11,7 +11,7 @@ $(document).ready(function(){
             type: 'GET',
             dataType: 'JSON',
             url: url,
-            success: function(dados){
+            success: function(dados) {
                 $('#LOGRADOURO').val(dados.logradouro)
                 $('#BAIRRO').val(dados.bairro)
                 $('#LOCALIDADE').val(dados.localidade)
